@@ -14,10 +14,10 @@ function App() {
   });
 
   const updateVote = (type: VoteType) => {
-    setVotes({
-      ...votes,
-      [type]: votes[type] + 1,
-    });
+    setVotes((prevVotes) => ({
+      ...prevVotes,
+      [type]: prevVotes[type] + 1,
+    }));
   };
 
   const resetVotes = () => {
